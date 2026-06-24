@@ -97,6 +97,12 @@ export default function PublicCatProfile() {
           <p className="text-sm font-bold uppercase tracking-wide">🚨 Lost Cat Alert</p>
           <h2 className="mt-1 text-2xl font-black">{cat.name} is missing</h2>
           <p className="mt-2 text-sm text-red-50">Please help bring {cat.name} home safely.</p>
+          {cat.lostMode?.lastSeenLocationText ? (
+            <p className="mt-3 rounded-2xl bg-white/15 px-4 py-2 text-sm font-bold">
+              Last seen: {cat.lostMode.lastSeenLocationText}
+            </p>
+          ) : null}
+          {cat.lostMode?.lastSeenAtText ? <p className="mt-1 text-xs text-red-50">{cat.lostMode.lastSeenAtText}</p> : null}
         </section>
       ) : null}
 
@@ -123,10 +129,19 @@ export default function PublicCatProfile() {
         </dl>
       </section>
 
-      {cat.emergencyInstructions ? (
+      {cat.lostMode?.description ? (
+        <section className="mt-4 soft-card border-red-100 bg-red-50">
+          <h2 className="text-lg font-black text-red-700">Lost mode details</h2>
+          <p className="mt-2 text-sm leading-6 text-red-700">{cat.lostMode.description}</p>
+        </section>
+      ) : null}
+
+      {cat.emergencyInstructions || cat.lostMode?.finderInstructions ? (
         <section className="mt-4 soft-card border-orange-200 bg-orange-50">
           <h2 className="text-lg font-black">Finder instructions</h2>
-          <p className="mt-2 text-sm leading-6 text-stone-600">{cat.emergencyInstructions}</p>
+          <p className="mt-2 text-sm leading-6 text-stone-600">
+            {cat.lostMode?.finderInstructions || cat.emergencyInstructions}
+          </p>
         </section>
       ) : null}
 
