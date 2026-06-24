@@ -19,6 +19,7 @@ import CatgramNew from "./pages/catgram/CatgramNew"
 import CatgramPostDetail from "./pages/catgram/CatgramPostDetail"
 import SeedDemo from "./pages/dev/SeedDemo"
 import NotFound from "./pages/NotFound"
+import ProtectedRoute from "./routes/ProtectedRoute"
 
 export default function App() {
   return (
@@ -32,14 +33,14 @@ export default function App() {
 
       <Route path="/owner/register" element={<OwnerRegister />} />
       <Route path="/owner/login" element={<OwnerLogin />} />
-      <Route path="/owner/dashboard" element={<OwnerDashboard />} />
-      <Route path="/owner/cats" element={<MyCats />} />
-      <Route path="/owner/cats/new" element={<AddCat />} />
-      <Route path="/owner/cats/:catId" element={<CatDetail />} />
-      <Route path="/owner/cats/:catId/lost-mode" element={<LostMode />} />
-      <Route path="/owner/reports" element={<ReportsInbox />} />
-      <Route path="/owner/reports/:reportId" element={<ReportDetail />} />
-      <Route path="/owner/journal" element={<Journal />} />
+      <Route path="/owner/dashboard" element={<ProtectedRoute><OwnerDashboard /></ProtectedRoute>} />
+      <Route path="/owner/cats" element={<ProtectedRoute><MyCats /></ProtectedRoute>} />
+      <Route path="/owner/cats/new" element={<ProtectedRoute><AddCat /></ProtectedRoute>} />
+      <Route path="/owner/cats/:catId" element={<ProtectedRoute><CatDetail /></ProtectedRoute>} />
+      <Route path="/owner/cats/:catId/lost-mode" element={<ProtectedRoute><LostMode /></ProtectedRoute>} />
+      <Route path="/owner/reports" element={<ProtectedRoute><ReportsInbox /></ProtectedRoute>} />
+      <Route path="/owner/reports/:reportId" element={<ProtectedRoute><ReportDetail /></ProtectedRoute>} />
+      <Route path="/owner/journal" element={<ProtectedRoute><Journal /></ProtectedRoute>} />
 
       <Route path="/catgram" element={<CatgramFeed />} />
       <Route path="/catgram/new" element={<CatgramNew />} />
