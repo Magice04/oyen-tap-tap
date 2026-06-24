@@ -1,0 +1,98 @@
+export const demoCat = {
+  id: "demo_oyen_001",
+  ownerId: "demo_owner_001",
+  publicId: "oyen-123",
+  name: "Oyen",
+  breed: "Domestic Shorthair",
+  color: "Orange",
+  age: "2 years old",
+  gender: "male",
+  personality: "Friendly, playful, and food motivated.",
+  distinctiveMarks: "Small white patch under chin",
+  medicalNotes: "No major medical issues",
+  allergies: "Chicken",
+  dietaryNotes: "Loves wet food",
+  emergencyInstructions: "Approach slowly. Do not chase. Contact owner if found.",
+  status: "lost",
+  nfcActive: true,
+  photoUrl: "",
+}
+
+export const demoReports = [
+  {
+    id: "demo_report_001",
+    catId: "demo_oyen_001",
+    ownerId: "demo_owner_001",
+    catName: "Oyen",
+    reportType: "found",
+    locationText: "Near Block B parking area",
+    condition: "Scared but looks healthy",
+    message: "He was hiding under a white car. I called him and he came out slowly.",
+    urgency: "medium",
+    status: "new",
+  },
+  {
+    id: "demo_report_002",
+    catId: "demo_oyen_001",
+    ownerId: "demo_owner_001",
+    catName: "Oyen",
+    reportType: "sighting",
+    locationText: "Section 7 playground",
+    condition: "Nervous",
+    message: "Saw an orange cat near the bench. It ran toward the shop lots.",
+    urgency: "medium",
+    status: "reviewed",
+  },
+]
+
+export const demoJournalEntries = [
+  {
+    id: "journal_001",
+    type: "finder_report",
+    title: "Finder report received",
+    description: "Oyen was reported near Block B parking area.",
+  },
+  {
+    id: "journal_002",
+    type: "lost_mode",
+    title: "Lost mode activated",
+    description: "Public profile is now showing a lost cat alert.",
+  },
+  {
+    id: "journal_003",
+    type: "memory",
+    title: "Oyen's favorite sunbathing spot",
+    description: "He loves sleeping beside the window after breakfast.",
+  },
+]
+
+export const demoCatgramPosts = [
+  {
+    id: "post_001",
+    authorId: "demo_owner_001",
+    authorName: "aisya_cats",
+    catId: "demo_oyen_001",
+    catName: "Oyen",
+    publicId: "oyen-123",
+    postType: "lost",
+    caption: "Oyen is missing near Section 7. Please help us look out for him.",
+    imageUrl: "",
+    locationText: "Section 7, Shah Alam",
+    status: "active",
+    likeCount: 52,
+    commentCount: 18,
+  },
+  {
+    id: "post_002",
+    authorId: "demo_user_002",
+    authorName: "cat_hero",
+    catName: "Unknown tabby",
+    postType: "found",
+    caption: "Found this cat near Block B parking area. NFC tag opened this profile.",
+    imageUrl: "",
+    locationText: "Block B parking area",
+    status: "active",
+    likeCount: 24,
+    commentCount: 6,
+  },
+]
